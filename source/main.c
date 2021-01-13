@@ -15,8 +15,12 @@
 int main(void) {
 	DDRB = 0xFF; // Configure port B's 8 pins as outputs
 	PORTB = 0x00; // Initialize PORTB output to 0’s
+	
+	unsigned char temp_input = 0x00; // Init output on PORTB to 0x00
+
 	while(1){
-		PORTB = 0x0F; // Writes port B's 8 pins with 00001111
+		temp_input = PINA;
+		PORTB = temp_input;
 	}
 	return 1;
 
