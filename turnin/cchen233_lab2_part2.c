@@ -1,7 +1,7 @@
 /*	Author:Christopher Chen
  *  Partner(s) Name: 
  *	Lab Section:21
- *	Assignment: Lab #2  Exercise #2
+ *	Assignment: Lab #2  Exercise #3
  *	Exercise Description: [optional - include for your own benefit]
  *
  *	I acknowledge all content contained herein, excluding template or example
@@ -24,6 +24,7 @@ int main(void) {
 		// 2) Perform computation
 		cntavail = ((tmpA & 0x08) >> 3 ) +  ((tmpA & 0x04) >> 2 ) + 
 		       	((tmpA & 0x02) >> 1 ) +  (tmpA & 0x01);   
+		cntavail = 4 - cntavail;
 		// 3) Write output
 		PORTC = cntavail;	
 	}
