@@ -24,9 +24,9 @@ int main(void) {
 		totalWeight = PINA + PINB + PINC;
 		// 2) Check if weight exceeds 140kgs
 		if(totalWeight > 140)
-			totalWeight = totalWeight | 0x01;
+			totalWeight = totalWeight >>2 | 0x01;
 		else
-			totalWeight = totalWeight & 0xFE;
+			totalWeight = totalWeight >>2 & 0xFE;
 		// 3) Check if A / C difference exceeds 80kgs
 		if((PINA - PINC > 80) || (PINC - PINA > 80))
 			totalWeight = totalWeight | 0x02;
